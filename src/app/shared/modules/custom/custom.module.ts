@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
   ],
   imports: [
     CommonModule,
-    InputTrimModule,
+    InputTrimModule
   ],
   exports: [
     TrimOnBlurDirective,
