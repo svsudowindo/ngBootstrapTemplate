@@ -6,6 +6,7 @@ import { GlobalVariables } from '../../../shared/services/common/globalVariables
 import { GlobalVariableEnums } from '../../../shared/constants/gloabal-variable-enums';
 import Utils from './../../../shared/services/common/utils';
 import { CommonRequestService } from '../../../shared/services/common-request.service';
+import { PopupService } from '../../../shared/components/componentsAsService/popup/popup.service';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,8 @@ export class LoginComponent extends BaseClass implements OnInit {
   constructor(public route: Router,
     public injector: Injector,
     private _commonRequest: CommonRequestService,
-    private _globalVariables: GlobalVariables) {
+    private _globalVariables: GlobalVariables,
+    private _popService: PopupService) {
     super(injector);
   }
 
@@ -43,5 +45,13 @@ export class LoginComponent extends BaseClass implements OnInit {
       ((err) => {
         this.errorMessageStatus = err;
       }));
+  }
+
+  openModal() {
+    this._popService.openModal({templateEnum: 'filters'}).then(res => {
+      console.log(res);
+    }, (reason) => {
+      console.log(reason);
+    } );
   }
 }

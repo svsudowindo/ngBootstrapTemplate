@@ -5,6 +5,7 @@ import { TrimOnBlurDirective } from '../../directives/ng-trim.directive';
 import { InputTrimModule } from 'ng2-trim-directive';
 import { ResponseMessageComponent } from '../../components/response-message/response-message.component';
 import { CommonModule } from '@angular/common';
+import { PopupModule } from '../../components/componentsAsService/popup/popup.module';
 
 @NgModule({
   declarations: [
@@ -13,11 +14,13 @@ import { CommonModule } from '@angular/common';
   ],
   imports: [
     CommonModule,
-    InputTrimModule
+    InputTrimModule,
+    PopupModule
   ],
   exports: [
     TrimOnBlurDirective,
     InputTrimModule,
+    PopupModule,
     ResponseMessageComponent
   ]
 })

@@ -15,6 +15,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HeaderInterceptorsService } from './shared/services/http/header-interceptors.service';
 
 import { environment } from './../environments/environment';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
