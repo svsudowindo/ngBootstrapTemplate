@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 export interface IDataInfo {
-  templateEnum: string;
+  type?: string;
+  title?: string;
+  message?: string;
+  okButtonLabel?: string;
   // any other data if needed
 }
 @Injectable({

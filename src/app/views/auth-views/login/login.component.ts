@@ -7,6 +7,8 @@ import { GlobalVariableEnums } from '../../../shared/constants/gloabal-variable-
 import Utils from './../../../shared/services/common/utils';
 import { CommonRequestService } from '../../../shared/services/common-request.service';
 import { PopupService } from '../../../shared/components/componentsAsService/popup/popup.service';
+import { POPUP } from '../../../shared/constants/popup-enum';
+import { IDataInfo } from '../../../shared/components/componentsAsService/popup/popup-info.service';
 
 @Component({
   selector: 'app-login',
@@ -48,10 +50,16 @@ export class LoginComponent extends BaseClass implements OnInit {
   }
 
   openModal() {
-    this._popService.openModal({templateEnum: 'filters'}).then(res => {
+    const obj: IDataInfo = {
+      type: POPUP.ERROR,
+      title: 'SUCCESS',
+      message: 'You have successfully Logged In',
+      okButtonLabel: 'OK'
+    };
+    this._popService.openModal(obj).then(res => {
       console.log(res);
     }, (reason) => {
       console.log(reason);
-    } );
+    });
   }
 }
