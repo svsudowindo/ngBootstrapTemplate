@@ -9,6 +9,7 @@ import { CommonRequestService } from '../../../shared/services/common-request.se
 import { PopupService } from '../../../shared/components/componentsAsService/popup/popup.service';
 import { POPUP } from '../../../shared/constants/popup-enum';
 import { IDataInfo } from '../../../shared/components/componentsAsService/popup/popup-info.service';
+import { LoaderService } from '../../../shared/components/componentsAsService/loader/loader.service';
 
 @Component({
   selector: 'app-login',
@@ -25,7 +26,8 @@ export class LoginComponent extends BaseClass implements OnInit {
     public injector: Injector,
     private _commonRequest: CommonRequestService,
     private _globalVariables: GlobalVariables,
-    private _popService: PopupService) {
+    private _popService: PopupService,
+    private _loaderService: LoaderService) {
     super(injector);
   }
 
@@ -61,5 +63,8 @@ export class LoginComponent extends BaseClass implements OnInit {
     }, (reason) => {
       console.log(reason);
     });
+  }
+  openLoader() {
+    this._loaderService.showLoading();
   }
 }

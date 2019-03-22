@@ -6,6 +6,7 @@ import { InputTrimModule } from 'ng2-trim-directive';
 import { ResponseMessageComponent } from '../../components/response-message/response-message.component';
 import { CommonModule } from '@angular/common';
 import { PopupModule } from '../../components/componentsAsService/popup/popup.module';
+import { LoaderModule } from '../../components/componentsAsService/loader/loader.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PopupModule } from '../../components/componentsAsService/popup/popup.mo
   imports: [
     CommonModule,
     InputTrimModule,
-    PopupModule
+    PopupModule,
+    LoaderModule
   ],
   exports: [
     TrimOnBlurDirective,
