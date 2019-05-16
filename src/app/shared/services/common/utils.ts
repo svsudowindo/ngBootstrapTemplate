@@ -449,4 +449,8 @@ export default class Utils {
     }, 50);
   }
 
+  // to avoid shallow copy and making into deep copy
+  static avoidShallowClone(input) {
+    return JSON.parse(JSON.stringify(input));
+  }
 }
