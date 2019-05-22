@@ -30,7 +30,10 @@
               "src/styles.scss",
               "src/assets/styles/common.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jspdf/dist/jspdf.min.js",
+              "./node_modules/jspdf-autotable/dist/jspdf.plugin.autotable.min.js"
+            ]
           },
           "configurations": {
             "production": {
