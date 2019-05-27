@@ -7,23 +7,29 @@ import { ResponseMessageComponent } from '../../components/response-message/resp
 import { CommonModule } from '@angular/common';
 import { PopupModule } from '../../components/componentsAsService/popup/popup.module';
 import { LoaderModule } from '../../components/componentsAsService/loader/loader.module';
+import { UnderscoreRemovalPipe } from '../../directives/underscore-removal.pipe';
+import { NumberOnlyDirective } from '../../directives/number-only.directive';
 
 @NgModule({
-  declarations: [
-    TrimOnBlurDirective,
-    ResponseMessageComponent
-  ],
-  imports: [
-    CommonModule,
-    InputTrimModule,
-    PopupModule,
-    LoaderModule
-  ],
-  exports: [
-    TrimOnBlurDirective,
-    InputTrimModule,
-    PopupModule,
-    ResponseMessageComponent
-  ]
+    declarations: [
+        TrimOnBlurDirective,
+        ResponseMessageComponent,
+        UnderscoreRemovalPipe,
+        NumberOnlyDirective
+    ],
+    imports: [
+        CommonModule,
+        InputTrimModule,
+        PopupModule,
+        LoaderModule
+    ],
+    exports: [
+        TrimOnBlurDirective,
+        InputTrimModule,
+        PopupModule,
+        ResponseMessageComponent,
+        UnderscoreRemovalPipe,
+        NumberOnlyDirective
+    ]
 })
 export class CustomModule { }
