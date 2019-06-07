@@ -41,7 +41,7 @@ export class LoginComponent extends BaseClass implements OnInit {
     },
   ];
 
-  @ViewChild('contentToConvert') contentToConvert: ElementRef;
+  @ViewChild('contentToConvert', { static: true }) contentToConvert: ElementRef;
   public successMessageStatus: string;
   public errorMessageStatus: string;
 
@@ -64,7 +64,7 @@ export class LoginComponent extends BaseClass implements OnInit {
     this.successMessageStatus = '';
     this.errorMessageStatus = '';
 
-    this._globalVariables.setParameterData(GlobalVariableEnums.TOKEN, 'abc');
+    // this._globalVariables.setParameterData(GlobalVariableEnums.TOKEN, 'abc');
     RequestEnums.LOGIN.values.push(1);
     this._commonRequest.request(RequestEnums.LOGIN).subscribe((res) => {
       console.log(res);

@@ -12,7 +12,7 @@ import { CustomValidators } from '../../../shared/services/common/validators';
 })
 export class RegistrationComponent extends BaseClass implements OnInit {
 
-  @ViewChild('registerationNgForm') registerationNgForm: FormGroupDirective; // used only for angular material
+  @ViewChild('registerationNgForm', { static: false }) registerationNgForm: FormGroupDirective; // used only for angular material
   public registerationForm: FormGroup;
   public registrationObject = new Registration();
   public successMessageStatus: string;

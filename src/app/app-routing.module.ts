@@ -24,15 +24,15 @@ const routes: Routes = [
     children: [
       {
         path: 'login',
-        loadChildren: './views/auth-views/login/login.module#LoginModule'
+        loadChildren: () => import('./views/auth-views/login/login.module').then(m => m.LoginModule)
       },
       {
         path: '404',
-        loadChildren: './views/auth-views/page-not-found/page-not-found.module#PageNotFoundModule'
+        loadChildren: () => import('./views/auth-views/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
       },
       {
         path: 'registration',
-        loadChildren: './views/auth-views/registration/registration.module#RegistrationModule',
+        loadChildren: () => import('./views/auth-views/registration/registration.module').then(m => m.RegistrationModule),
         data: {
           preload: true // use when you dont want lazy loading for a particular module
         }
@@ -48,7 +48,7 @@ const routes: Routes = [
     children: [
       {
         path: 'dashboard',
-        loadChildren: './views/admin-views/dashboard/dashboard.module#DashboardModule',
+        loadChildren: () => import('./views/admin-views/dashboard/dashboard.module').then(m => m.DashboardModule),
         canLoad: [CanLoadService] // Use when we want to make a disission to load sub modules or not
       }
     ]
